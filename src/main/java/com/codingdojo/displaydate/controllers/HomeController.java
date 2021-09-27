@@ -1,4 +1,4 @@
-package com.codingdojo.displaydate;
+package com.codingdojo.displaydate.controllers;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping("/date") 
 		public String date(Model model) {
 			Date myDate = new Date();
-			String str = new SimpleDateFormat("EEEE, dd MMMM, YYYY", Locale.ENGLISH).format(myDate);
+			String str = new SimpleDateFormat("EEEE, 'the' dd 'of' MMMM, YYYY", Locale.ENGLISH).format(myDate);
 			model.addAttribute("date", str);
 			System.out.println(str);
 			return "dateTemplate.jsp";
